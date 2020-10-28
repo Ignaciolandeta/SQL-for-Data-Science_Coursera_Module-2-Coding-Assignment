@@ -84,3 +84,49 @@ B.False ----> THIS IS CORRECT ANSWER
 
 
 
+
+7.Select the correct SQL syntax for creating a view.
+
+CREATE VIEW
+customers AS
+SELECT * 
+FROM customers
+WHERE Name LIKE '%I'
+
+
+
+
+
+8.Profiling data is helpful for which of the following? (Select all that apply)
+
+A.Understanding your data ----> THIS IS CORRECT
+B.Filter out unwanted data elements ----> THIS IS CORRECT
+C.Joining tables together
+
+
+
+
+
+9.What is the most important step before beginning to write queries?
+
+A.Deciding what should be done on the client application vs the RDMS
+B.Understanding your data   ----> THIS IS CORRECT ANSWER
+C.Deciding what tables you want to join
+
+
+
+
+
+
+10.When debugging a query, what should you always remember to do first?
+
+A.Make sure you didn’t miss any commas.
+B.Start by examining the joins 
+C.Start simple and break it down first ----> THIS IS CORRECT ANSWER
+D.Start with the inner most query
+
+
+
+
+
+
