@@ -24,4 +24,63 @@ select trackid
 from tracks;
 
 
+1.Which of the following are supported in SQL when dealing with strings? (Select all that apply)
+
+Upper
+Lower
+Trim
+Substring
+Concatenate
+
+ALL OF THEM
+
+
+
+
+2.What will the result of the following statement be?
+
+SELECT SUBSTR('You are beautiful.', 3)
+
+A.u are beautiful. ----> THIS IS CORRECT ANSWER
+B.You are beautiful.
+C.This will return an error
+D.beautiful.
+
+
+
+
+
+3.What are the results of the following query?
+
+select * orders
+where order_date = ‘2017-07-15’
+
+Additional information:
+Orders = integer
+Order_date = datetime
+
+A.You will get all of the orders.
+B.You will get all the orders with an order date of 2017-07-15.
+C.You won't get any results.  ----> THIS IS CORRECT ANSWER
+
+
+
+
+5.Which of the following is FALSE regarding views?
+
+A.Views are stored in a query
+B.Views can be used to encapsulate queries
+C.Views will remain after the database connection has ended ---> THIS IS FALSE
+
+
+
+
+
+6. You are only allowed to have one condition in a case statement. True or false?
+
+A.True
+B.False ----> THIS IS CORRECT ANSWER
+
+
+
 
