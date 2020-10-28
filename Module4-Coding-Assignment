@@ -1,1 +1,25 @@
-.
+https://www.coursera.org/learn/sql-for-data-science
+All of the questions in this quiz refer to the open source Chinook Database. Please familiarize yourself with the ER diagram
+https://ucde-rey.s3.amazonaws.com/DSV1015/ChinookDatabaseSchema.png
+
+
+DATE AND TIME EXAMPLE;
+select invoicedate
+,strftime ('%Y', invoicedate) as Year
+,strftime ('%m', invoicedate) as Month
+,strftime ('%d', invoicedate) as Day
+from invoices
+
+
+CASE STATEMENT EXAMPLE;
+select trackid
+,name
+,bytes
+,case
+    when bytes <3000000 then 'small'
+    when bytes >=3000001 and bytes <5000000 then 'medium'
+    when bytes >=5000001 then 'large'
+        else 'other'
+    end Size
+from tracks;
+
