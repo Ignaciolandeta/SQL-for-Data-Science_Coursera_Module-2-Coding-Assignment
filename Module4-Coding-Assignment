@@ -24,6 +24,98 @@ select trackid
 from tracks;
 
 
+1.Pull a list of customer ids with the customer’s full name, and address, along with combining their city and country together. Be sure to make a space in between these two and make it UPPER CASE. (e.g. LOS ANGELES USA)
+select customerid
+,firstname
+,lastname
+,address
+,upper(city || ' '|| country||'')
+from customers
+
+What is the city and country result for CustomerID 16? ---> MOUNTAIN VIEW USA
+
+
+
+
+
+2.Create a new employee user id by combining the first 4 letters of the employee’s first name with the first 2 letters of the employee’s last name. Make the new field lower case and pull each individual step to show your work.
+select firstname
+,lastname
+,lower (substr(firstname,1,4) || substr(lastname,1,2)) as NewEmployeeID
+from employees
+
+What is the final result for Robert King? --> robeki
+
+
+
+
+
+3.Show a list of employees who have worked for the company for 15 or more years using the current date function. Sort by lastname ascending.
+select lastname
+,hiredate
+,(STRFTIME('%Y', 'now') - STRFTIME('%Y', HireDate)) 
+          - (STRFTIME('%m-%d', 'now') < STRFTIME('%m-%d', HireDate)) 
+          AS YearsHired
+from employees
+where YearsHired >= 15
+order by LastName ASC
+
+What is the lastname of the last person on the list returned? -->Peacock
+
+
+
+
+4.Profiling the Customers table, answer the following question.
+SELECT COUNT(*)
+FROM Customers
+WHERE [try_column] IS NULL
+
+-- try_column:iterate all the table columns e.g FirstName, PostalCode, Company, Fax, Phone, Address, etc
+Are there any columns with null values? Indicate any below. Select all that apply.--> Answers: Postal Code, Company, Fax, Phone
+
+
+
+5.Find the cities with the most customers and rank in descending order.
+select city
+,count(*)
+from customers
+group by city
+order by count(*) desc
+
+Find the cities with the most customers and rank in descending order. --> London, Sao Paulo, Mountain View
+
+
+
+
+
+6.Create a new customer invoice id by combining a customer’s invoice id with their first and last name while ordering your query in the following order: firstname, lastname, and invoiceID.
+select c.firstname
+,c.lastname
+,i.invoiceid
+,c.firstname || c.lastname || i.invoiceid as NewInvoiceID
+from customers c inner join invoices i on c.customerid = i.customerid
+where c.lastname = 'Gruber'
+
+Select all of the correct "AstridGruber" entries that are returned in your results below. Select all that apply. --> 
+AstridGruber273
+AstridGruber296
+AstridGruber370
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1.Which of the following are supported in SQL when dealing with strings? (Select all that apply)
 
 Upper
